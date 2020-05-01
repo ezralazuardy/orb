@@ -2,17 +2,12 @@ version: 2.1
 
 orbs:
  android: circleci/android@0.2.0
- codecov: codecov/codecov@1.0.5
 
 jobs:
   build:
     executor: android/android
-        
     steps:
       - checkout
       - run:
           name: Building
           command: ./gradlew build
-      - run:
-          name: Upload Coverage Results
-          command: bash <(curl -s https://codecov.io/bash)
