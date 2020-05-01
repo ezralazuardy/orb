@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group='com.github.ezralazuardy'
+group='com.github.ezralazuardy.demo'
 
 android {
     compileSdkVersion 29
