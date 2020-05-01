@@ -11,7 +11,8 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Building
           command: ./gradlew build
       - run:
           name: Upload Coverage Results
-          command: curl -s https://codecov.io/bash | bash -s
+          command: bash <(curl -s https://codecov.io/bash)
