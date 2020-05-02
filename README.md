@@ -10,4 +10,6 @@
   <a href="https://github.com/ezralazuardy/orb/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ezralazuardy/orb" alt="license" target="_blank" rel="noopener noreferrer"></a>
 </p>
 
+---
+
 Orb is an network monitoring library to simplify the needs of monitoring network state in Android.
