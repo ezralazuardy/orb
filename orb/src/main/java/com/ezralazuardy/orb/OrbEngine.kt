@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 5/4/20 2:42 AM
- * Copyright (c) 2020 . All rights reserved.
- * Last modified 5/4/20 2:42 AM
+ * Created by Ezra Lazuardy on 5/4/20 4:18 AM
+ * Copyright (c) 2020. All rights reserved.
+ * Last modified 5/4/20 4:17 AM
  */
 
 package com.ezralazuardy.orb
@@ -170,7 +170,7 @@ class OrbEngine(
                 OrbType.WIFI_AWARE -> orbOptions.wifiAware = state
                 else -> throw OrbException(OrbException.DISALLOW_ORB_TYPE_UNKNOWN)
             }
-        } catch (e: Exception) {
+        } catch (e: OrbException) {
             e.printStackTrace()
         }
         return this

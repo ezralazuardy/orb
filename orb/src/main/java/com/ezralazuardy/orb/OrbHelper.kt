@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 5/4/20 2:42 AM
- * Copyright (c) 2020 . All rights reserved.
- * Last modified 5/4/20 2:42 AM
+ * Created by Ezra Lazuardy on 5/4/20 4:18 AM
+ * Copyright (c) 2020. All rights reserved.
+ * Last modified 5/4/20 4:07 AM
  */
 
 package com.ezralazuardy.orb
@@ -17,7 +17,7 @@ import androidx.lifecycle.LifecycleOwner
  * OrbHelper is a singleton object that provide some method to help the Orb network
  * monitoring process.
  */
-internal object OrbHelper {
+object OrbHelper {
 
     /**
      * Context.lifecycleOwner() used to determine a lifecycle owner by a specified context. It will
@@ -86,5 +86,32 @@ internal object OrbHelper {
             }
         }
         return OrbType.UNKNOWN
+    }
+
+    /**
+     * orbObserve() is a helper function that return OrbResponse lambda to help building Orb observer.
+     * This function take a lambda as the parameter.
+     *
+     * @param lambda
+     */
+    fun orbObserver(observer: (OrbResponse) -> Unit) = observer
+
+    /**
+     * orbOptions() is a helper function that return OrbOptions object to initialize the Orb options.
+     * This function take a lambda that returning Map<OrbType, Boolean> as the parameter.
+     *
+     * @param lambda
+     */
+    fun orbOptions(options: () -> Map<OrbType, Boolean>): OrbOptions {
+        return OrbOptions().apply {
+            val mapOptions = options.invoke()
+            bluetooth = mapOptions.getOrElse(OrbType.BLUETOOTH, { true })
+            cellular = mapOptions.getOrElse(OrbType.CELLULAR, { true })
+            ethernet = mapOptions.getOrElse(OrbType.ETHERNET, { true })
+            lowPan = mapOptions.getOrElse(OrbType.LOW_PAN, { true })
+            vpn = mapOptions.getOrElse(OrbType.VPN, { true })
+            wifi = mapOptions.getOrElse(OrbType.WIFI, { true })
+            wifiAware = mapOptions.getOrElse(OrbType.WIFI_AWARE, { true })
+        }
     }
 }

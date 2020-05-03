@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 5/4/20 2:42 AM
- * Copyright (c) 2020 . All rights reserved.
- * Last modified 5/4/20 2:42 AM
+ * Created by Ezra Lazuardy on 5/4/20 4:18 AM
+ * Copyright (c) 2020. All rights reserved.
+ * Last modified 5/4/20 4:17 AM
  */
 
 package com.ezralazuardy.orb
@@ -12,6 +12,7 @@ import android.os.Build
 import androidx.annotation.MainThread
 import androidx.lifecycle.Observer
 import com.ezralazuardy.orb.OrbHelper.lifecycleOwner
+import com.ezralazuardy.orb.OrbHelper.orbOptions
 
 /**
  * Orb is a class that provide functionality to observe network events.
@@ -89,7 +90,7 @@ class Orb private constructor() {
                     orbEngine.observe(context.lifecycleOwner()!!, this.observer)
                 } else throw OrbError(OrbError.ORB_NOT_INITIALIZED)
             } else throw OrbError(OrbError.LIFECYCLE_OWNER_NOT_FOUND)
-        } catch (e: Exception) {
+        } catch (e: OrbError) {
             e.printStackTrace()
         }
         return this
@@ -116,7 +117,7 @@ class Orb private constructor() {
                     return true
                 } else throw OrbError(OrbError.ORB_NOT_INITIALIZED)
             } else throw OrbError(OrbError.ORB_NOT_INITIALIZED)
-        } catch (e: Exception) {
+        } catch (e: OrbError) {
             e.printStackTrace()
         }
         this.orbListener?.onOrbStop(false)
@@ -336,32 +337,5 @@ class Orb private constructor() {
             )
         }
         return this
-    }
-}
-
-/**
- * orbObserve() is a helper function that return OrbResponse lambda to help building Orb observer.
- * This function take a lambda as the parameter.
- *
- * @param lambda
- */
-fun orbObserver(observer: (OrbResponse) -> Unit) = observer
-
-/**
- * orbOptions() is a helper function that return OrbOptions object to initialize the Orb options.
- * This function take a lambda that returning Map<OrbType, Boolean> as the parameter.
- *
- * @param lambda
- */
-fun orbOptions(options: () -> Map<OrbType, Boolean>): OrbOptions {
-    return OrbOptions().apply {
-        val mapOptions = options.invoke()
-        bluetooth = mapOptions.getOrElse(OrbType.BLUETOOTH, { true })
-        cellular = mapOptions.getOrElse(OrbType.CELLULAR, { true })
-        ethernet = mapOptions.getOrElse(OrbType.ETHERNET, { true })
-        lowPan = mapOptions.getOrElse(OrbType.LOW_PAN, { true })
-        vpn = mapOptions.getOrElse(OrbType.VPN, { true })
-        wifi = mapOptions.getOrElse(OrbType.WIFI, { true })
-        wifiAware = mapOptions.getOrElse(OrbType.WIFI_AWARE, { true })
     }
 }
