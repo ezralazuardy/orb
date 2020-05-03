@@ -122,7 +122,7 @@ You can try the sample implementation Orb by cloning this repository to your loc
 ## 👷️ Contributing
 All contributions are welcomed. Please make a [pull request](https://github.com/ezralazuardy/orb/pulls) so that I can review your changes.
 
-Before start making contributions to Orb, please read the [contribution guidelines](https://github.com/ezralazuardy/orb/blob/master/CONTRIBUTING.md).
+Before start making contributions to Orb, please read the [contribution guidelines](https://github.com/ezralazuardy/orb/blob/master/CONTRIBUTING.md) and [code of conduct](https://github.com/ezralazuardy/orb/blob/master/CODE_OF_CONDUCT.md).
 
 <br/>
 
