@@ -7,8 +7,8 @@
 package com.ezralazuardy.orb
 
 /**
- * OrbState is an enum class that hold some Orb network state properties
+ * OrbType is an enum class that hold some Orb network type properties
  */
-enum class OrbState {
-    CONNECTED, DISCONNECTED, UNKNOWN
+enum class OrbType {
+    UNKNOWN, BLUETOOTH, CELLULAR, ETHERNET, LOW_PAN, VPN, WIFI, WIFI_AWARE
 }

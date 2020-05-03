@@ -1,3 +1,16 @@
+<!--
+  ~ Created by Ezra Lazuardy on 5/4/20 2:42 AM
+  ~ Copyright (c) 2020 . All rights reserved.
+  ~ Last modified 5/4/20 2:41 AM
+  -->
+
 <resources>
     <string name="app_name">Orb Demo</string>
+    <string name="txt_orb_action">Orb Action</string>
+    <string name="txt_orb_state">Orb State</string>
+    <string name="txt_orb_type">Orb Type</string>
+    <string name="txt_orb_error_message">Error Message</string>
+    <string name="txt_orb_action_log">Action Log</string>
+    <string name="txt_equal">:</string>
+    <string name="btn_open_second_activity">Second Activity</string>
 </resources>

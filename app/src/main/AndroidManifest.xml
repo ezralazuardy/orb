@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Ezra Lazuardy on 5/4/20 2:42 AM
+  ~ Copyright (c) 2020 . All rights reserved.
+  ~ Last modified 5/4/20 2:41 AM
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ezralazuardy.orb.demo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
