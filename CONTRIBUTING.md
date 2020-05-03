@@ -1,4 +1,4 @@
-## Contributing Guidelines
+## Contribution Guidelines
 Orb is an open-source project that accept all type of contributions.
 
 To start contribute to Orb, please make a new [pull request](https://github.com/ezralazuardy/orb/pulls) to post your changes. You should describe your changes clearly with the following important points :
