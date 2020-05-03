@@ -12,7 +12,7 @@
 
 ---
 
-Orb is a lifecycle-aware network monitoring library to simplify the needs of monitoring network state in Android. This library can help you monitor (observe) the current network state of Android device. It can give you the current connection status, connection type, and etc (please read the detail in the [wiki](#%EF%B8%8F-wiki)) in realtime change events. Orb really works well with the [MVVM architecture pattern](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) in Android.
+Orb is a lifecycle-aware asynchronous network monitoring library to simplify the needs of monitoring network state in Android. This library can help you monitor (observe) the current network state of Android device. It can give you the current connection status, connection type, and etc (please read the detail in the [wiki](#%EF%B8%8F-wiki)) in realtime change events without blocking the main thread. Orb really works well with the [MVVM architecture pattern](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) in Android.
 
 #### How it works
 Orb is an implementation of [Android Live Data](https://developer.android.com/topic/libraries/architecture/livedata) that use an observable pattern to get the network state data in realtime. This is what makes Orb lifecycle-aware. Since the lifecycle of Live Data object is already handled automatically by Android lifecycle, you don't need to handle the Orb lifecycle manually. It's guarantee you to be flexible and no memory leak. You can just start Orb and forget about it, it'll handle the lifecycle based on your Activity lifecycle automatically. The Orb lifecycle is already explaned in the [wiki](#%EF%B8%8F-wiki).
@@ -72,6 +72,7 @@ Since Orb API need to access and change the current network status of the device
 
 #### Using Orb
 Orb usage is pretty simple, you just need to initialize it in your current context (view), and the rest will be handled by Orb.
+
 ```kotlin
 Orb.with(this).observe {
     Log.d(this::javaClass.simpleName, it.toString()) // 'it' is an OrbResponse object
@@ -83,12 +84,11 @@ All the action defined inside observe function will be converted into an observe
 
 What if you want to change the observer?, like changing the observer action after you observing the Orb? or changing the observer action when each time Orb detecting network changes? to do that, please read more about Orb advanced usage in the [wiki](#%EF%B8%8F-wiki).
 
-Orb observer will be called each time Orb is detecting network changes in the device. The observe function also gives you an **OrbResponse** that hold the network state information, so that you can interact with it.
+If you don't want to use a direct written observer, you can use the Orb observer function builder, and pass the observer to observe function parameter.
 
-If you don't want to use an direct observer, you can use the Orb observer function builder.
 ```kotlin
 // use the Orb observer function builder
-var observer = orbObserver {
+val observer = orbObserver {
   Log.d(this::javaClass.simpleName, it.toString()) // 'it' is an OrbResponse object
   // do something awesome..
 }
@@ -96,7 +96,9 @@ var observer = orbObserver {
 Orb.with(this).observe(observer)
 ```
 
-Since Orb is lifecycle-aware, you don't need worry about memory leak, all already handled by Orb. You just need to focus on functionality of your app, and let Orb do all the network monitoring stuff. Isn't that awesome? 😍️️
+Orb observer will be called each time Orb is detecting network changes in the device. The observe function also gives you an **OrbResponse** that hold the network state information, so that you can interact with it.
+
+Please note that Orb will observing the network asynchronously. It's mean that Orb will **not** blocking your main thread, resulting in hang and stuttering effect on Android screen. And Orb is also lifecycle-aware. You don't need to worry about memory leak, all already handled by Orb. You just need to focus on functionality of your app, and let Orb do all the network monitoring stuff. Isn't that awesome? 😍️️
 
 #### The OrbResponse
 The observe method will return an **OrbResponse** object (accessible by keyword **it** by default) when each time Orb detecting a change in device network state. This object hold some properties as follows:
@@ -107,7 +109,7 @@ The observe method will return an **OrbResponse** object (accessible by keyword 
 | type         | OrbType    | OrbType.UNKNOWN  | Current network type of the device             |
 | errorMessage | String     | null             | The message when error happened in Orb process |
 
-Please read more about eh **OrbResponse** in the [wiki](#%EF%B8%8F-wiki).
+Please read more about the **OrbResponse** in the [wiki](#%EF%B8%8F-wiki).
 
 <br/>
 
