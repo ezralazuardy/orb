@@ -97,7 +97,7 @@ Orb.with(this).observe(observer)
 Since Orb is lifecycle-aware, you don't need worry about memory leak, all already handled by Orb. You just need to focus on functionality of your app, and let Orb do all the network monitoring stuff. Isn't that awesome? 😍️️
 
 #### The OrbResponse
-The observe method will return an **OrbResponse** object (accessible by keyword **it** by default) that hold some properties:
+The observe method will return an **OrbResponse** object (accessible by keyword **it** by default) when each time Orb detecting a change in device network state. This object hold some properties as follows:
 
 | Property     | Value    | Default Value    | Information                                    |
 | ------------ | -------- | ---------------- | ---------------------------------------------- |
