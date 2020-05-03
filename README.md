@@ -77,11 +77,13 @@ Orb.with(this).observe {
 }
 ```
 
-All the action defined inside observe function will be converted into an observer. Make sure you init the Orb only in the **onCreate()** function of your activity. Why?, because Orb only can observe a single observer. And what if you want to change the observer?, like changing the action each time Orb detecting network changes? to do that, please read more about Orb advanced usage in the [wiki](#%EF%B8%8F-wiki).
+All the action defined inside observe function will be converted into an observer. Make sure you've initialize the Orb only in the **onCreate()** function of your activity. Why?, because Orb only can observe a single observer and that need to be happened in the creation process of your activity.
 
-This observer will be called each time Orb is detecting network changes in the device. The observe function also gives you an **OrbResponse** that hold the network state information, so that you can interact with it.
+What if you want to change the observer?, like changing the observer action after you observing the Orb? or changing the observer action when each time Orb detecting network changes? to do that, please read more about Orb advanced usage in the [wiki](#%EF%B8%8F-wiki).
 
-If you don't want to use an direct observer, and want to change the observer behavior after you observe the Orb, you can use the Orb observer function builder.
+Orb observer will be called each time Orb is detecting network changes in the device. The observe function also gives you an **OrbResponse** that hold the network state information, so that you can interact with it.
+
+If you don't want to use an direct observer, you can use the Orb observer function builder.
 ```kotlin
 // use the Orb observer function builder
 var observer = orbObserver {
@@ -92,7 +94,7 @@ var observer = orbObserver {
 Orb.with(this).observe(observer)
 ```
 
-And since Orb is lifecycle-aware, you don't need worry about memory leak, all already handled by Orb. You just need to focus on functionality of your app, and let Orb do all the network monitoring stuff. Isn't that awesome? 😍️️
+Since Orb is lifecycle-aware, you don't need worry about memory leak, all already handled by Orb. You just need to focus on functionality of your app, and let Orb do all the network monitoring stuff. Isn't that awesome? 😍️️
 
 #### The OrbResponse
 The observe method will return an **OrbResponse** object (accessible by keyword **it** by default) that hold some properties:
@@ -120,7 +122,12 @@ You can try the sample implementation Orb by cloning this repository to your loc
 ## 👷️ Contributing
 All contributions are welcomed. Please make a [pull request](https://github.com/ezralazuardy/orb/pulls) so that I can review your changes.
 
+Before start making contributions to Orb, please read the [contribution guidelines](https://github.com/ezralazuardy/orb/blob/master/CONTRIBUTING.md).
+
 <br/>
+
+## 🛡️ Security Policy
+Read the current Orb project's security policy [here](https://github.com/ezralazuardy/orb/security/policy).
 
 ## 🗒️ Side Note
 Orb is at it's early stage. If you experiencing an error or bug, please report it to [issues](https://github.com/ezralazuardy/orb/issues) page.
