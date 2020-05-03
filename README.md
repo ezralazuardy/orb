@@ -114,7 +114,7 @@ Please read more about the **OrbResponse** in the [wiki](#%EF%B8%8F-wiki).
 <br/>
 
 ## 📖️ Wiki
-The wiki (documentation) is being written, stay tuned! 🤓️
+Read the Orb Wiki [here](https://github.com/ezralazuardy/orb/wiki).
 
 <br/>
 
