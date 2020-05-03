@@ -17,6 +17,8 @@ Orb is a lifecycle-aware network monitoring library to simplify the needs of mon
 #### How it works
 Orb is an implementation of [Android Live Data](https://developer.android.com/topic/libraries/architecture/livedata) that use an observable pattern to get the network state data in realtime. This is what makes Orb lifecycle-aware. Since the lifecycle of Live Data object is already handled automatically by Android lifecycle, you don't need to handle the Orb lifecycle manually. It's guarantee you to be flexible and no memory leak. You can just start Orb and forget about it, it'll handle the lifecycle based on your Activity lifecycle automatically. The Orb lifecycle is already explaned in the [wiki](#%EF%B8%8F-wiki).
 
+How Orb determine the current network state and type is by using [ConnectivityManager](https://developer.android.com/reference/android/net/ConnectivityManager). And due to some Android ConnectivityManager API deprecation, applying network managing algorithm can be a little bit hard and tricky. Here's come Orb to the rescue. Orb is simple, powerful, sweet, and the most important, idiomatic!. It's written in pure Kotlin.
+
 
 #### Latest version
 See the latest version of Orb [here](https://github.com/ezralazuardy/orb/releases).
@@ -99,11 +101,11 @@ Since Orb is lifecycle-aware, you don't need worry about memory leak, all alread
 #### The OrbResponse
 The observe method will return an **OrbResponse** object (accessible by keyword **it** by default) when each time Orb detecting a change in device network state. This object hold some properties as follows:
 
-| Property     | Value    | Default Value    | Information                                    |
-| ------------ | -------- | ---------------- | ---------------------------------------------- |
-| state        | OrbState | OrbType.UNKNOWN  | Current network state of the device            |
-| type         | OrbType  | OrbState.UNKNOWN | Current network type of the device             |
-| errorMessage | String   | null             | The message when error happened in Orb process |
+| Property     | Value Type | Default Value    | Information                                    |
+| ------------ | ---------- | ---------------- | ---------------------------------------------- |
+| state        | OrbState   | OrbState.UNKNOWN | Current network state of the device            |
+| type         | OrbType    | OrbType.UNKNOWN  | Current network type of the device             |
+| errorMessage | String     | null             | The message when error happened in Orb process |
 
 Please read more about eh **OrbResponse** in the [wiki](#%EF%B8%8F-wiki).
 
@@ -115,7 +117,7 @@ The wiki (documentation) is being written, stay tuned! 🤓️
 <br/>
 
 ## 🤔️ Sample Implementation
-You can try the sample implementation Orb by cloning this repository to your local, and run [app](https://github.com/ezralazuardy/orb/tree/master/app) module.
+You can try the sample implementation of Orb by cloning this repository to your local, and run the [app](https://github.com/ezralazuardy/orb/tree/master/app) module.
 
 <br/>
 
