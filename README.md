@@ -12,7 +12,7 @@
 
 ---
 
-Orb is a lifecycle-aware asynchronous network monitoring library to simplify the needs of monitoring network state in Android. This library can help you monitor (observe) the current network state of Android device. It can give you the current connection status, connection type, and etc (please read the detail in the [wiki](#%EF%B8%8F-wiki)) in realtime change events without blocking the main thread. Orb really works well with the [MVVM architecture pattern](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) in Android.
+Orb is a lifecycle-aware asynchronous network monitoring library to simplify the needs of network state monitoring in Android. This library can help you monitor (observe) the current network state of Android device. It can give you the current connection status, connection type, and etc (please read the detail in the [wiki](#%EF%B8%8F-wiki)) in realtime change events without blocking the main thread. Orb really works well with the [MVVM architecture pattern](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) in Android.
 
 #### How it works
 Orb is an implementation of [Android Live Data](https://developer.android.com/topic/libraries/architecture/livedata) that use an observable pattern to get the network state data in realtime. This is what makes Orb lifecycle-aware. Since the lifecycle of Live Data object is already handled automatically by Android lifecycle, you don't need to handle the Orb lifecycle manually. It's guarantee you to be flexible and no memory leak. You can just start Orb and forget about it, it'll handle the lifecycle based on your Activity lifecycle automatically. The Orb lifecycle is already explaned in the [wiki](#%EF%B8%8F-wiki).
