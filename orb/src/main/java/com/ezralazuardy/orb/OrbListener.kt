@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 5/4/20 2:42 AM
- * Copyright (c) 2020 . All rights reserved.
- * Last modified 5/4/20 2:41 AM
+ * Created by Ezra Lazuardy on 5/6/20 8:23 AM
+ * Copyright (c) 2020. All rights reserved.
+ * Last modified 5/6/20 7:45 AM
  */
 
 package com.ezralazuardy.orb
@@ -11,12 +11,6 @@ package com.ezralazuardy.orb
  * This listener can help to apply a callback on Orb lifecycle.
  */
 interface OrbListener {
-
-    /**
-     * onOrbCreate() will be invoked on creation of Orb instance. In short word, this method will
-     * called after client code calls .with().
-     */
-    fun onOrbCreate()
 
     /**
      * onOrbObserve() will be invoked on observation of an observer that specified in .observe().
@@ -40,5 +34,5 @@ interface OrbListener {
      * onOrbStop() will be invoked when Orb is being stopped. This method will be called after
      * client code calls .stop().
      */
-    fun onOrbStop(stopped: Boolean)
+    fun onOrbStop()
 }

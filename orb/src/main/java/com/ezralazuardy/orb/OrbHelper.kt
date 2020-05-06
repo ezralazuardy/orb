@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 5/4/20 4:18 AM
+ * Created by Ezra Lazuardy on 5/6/20 8:23 AM
  * Copyright (c) 2020. All rights reserved.
- * Last modified 5/4/20 4:07 AM
+ * Last modified 5/6/20 8:05 AM
  */
 
 package com.ezralazuardy.orb
@@ -43,7 +43,7 @@ object OrbHelper {
         OrbType.BLUETOOTH -> orbOptions.bluetooth
         OrbType.CELLULAR -> orbOptions.cellular
         OrbType.ETHERNET -> orbOptions.ethernet
-        OrbType.LOW_PAN -> orbOptions.lowPan
+        OrbType.LOWPAN -> orbOptions.loWPAN
         OrbType.VPN -> orbOptions.vpn
         OrbType.WIFI -> orbOptions.wifi
         OrbType.WIFI_AWARE -> orbOptions.wifiAware
@@ -65,7 +65,7 @@ object OrbHelper {
                     hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH) -> OrbType.BLUETOOTH
                     hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> OrbType.CELLULAR
                     hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> OrbType.ETHERNET
-                    hasTransport(NetworkCapabilities.TRANSPORT_LOWPAN) -> OrbType.LOW_PAN
+                    hasTransport(NetworkCapabilities.TRANSPORT_LOWPAN) -> OrbType.LOWPAN
                     hasTransport(NetworkCapabilities.TRANSPORT_VPN) -> OrbType.VPN
                     hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> OrbType.WIFI
                     hasTransport(NetworkCapabilities.TRANSPORT_WIFI_AWARE) -> OrbType.WIFI_AWARE
@@ -108,7 +108,7 @@ object OrbHelper {
             bluetooth = mapOptions.getOrElse(OrbType.BLUETOOTH, { true })
             cellular = mapOptions.getOrElse(OrbType.CELLULAR, { true })
             ethernet = mapOptions.getOrElse(OrbType.ETHERNET, { true })
-            lowPan = mapOptions.getOrElse(OrbType.LOW_PAN, { true })
+            loWPAN = mapOptions.getOrElse(OrbType.LOWPAN, { true })
             vpn = mapOptions.getOrElse(OrbType.VPN, { true })
             wifi = mapOptions.getOrElse(OrbType.WIFI, { true })
             wifiAware = mapOptions.getOrElse(OrbType.WIFI_AWARE, { true })

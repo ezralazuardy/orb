@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 5/4/20 4:18 AM
+ * Created by Ezra Lazuardy on 5/6/20 8:23 AM
  * Copyright (c) 2020. All rights reserved.
- * Last modified 5/4/20 4:17 AM
+ * Last modified 5/6/20 7:55 AM
  */
 
 package com.ezralazuardy.orb
@@ -25,9 +25,9 @@ import com.ezralazuardy.orb.OrbHelper.orbOptions
  */
 class Orb private constructor() {
 
-    private lateinit var observer: Observer<OrbResponse>
     private lateinit var context: Context
     private lateinit var orbEngine: OrbEngine
+    private lateinit var observer: Observer<OrbResponse>
     private var orbListener: OrbListener? = null
         set(value) {
             if (this::orbEngine.isInitialized) this.orbEngine.orbListener = value
@@ -40,14 +40,11 @@ class Orb private constructor() {
          * This method will construct the parameter that used in OrbEngine. Make sure to call
          * this method first before calling the other method as it is used to initializing the Orb.
          *
-         * OrbListener.onOrbCreate() will be called in this method.
-         *
          * @param context
          * @param orbOptions
          */
         @MainThread
         fun with(context: Context, options: OrbOptions = OrbOptions()): Orb = Orb().apply {
-            this.orbListener?.onOrbCreate()
             if (!this::context.isInitialized) {
                 this.context = context
                 this.orbEngine = OrbEngine(this.context, options)
@@ -109,18 +106,17 @@ class Orb private constructor() {
      */
     @MainThread
     fun stop(): Boolean {
+        this.orbListener?.onOrbStop()
         try {
             if (this::orbEngine.isInitialized) {
                 if (this::observer.isInitialized) {
                     orbEngine.removeObserver(this.observer)
-                    this.orbListener?.onOrbStop(true)
                     return true
                 } else throw OrbError(OrbError.ORB_NOT_INITIALIZED)
             } else throw OrbError(OrbError.ORB_NOT_INITIALIZED)
         } catch (e: OrbError) {
             e.printStackTrace()
         }
-        this.orbListener?.onOrbStop(false)
         return false
     }
 
@@ -176,7 +172,7 @@ class Orb private constructor() {
      */
     @TargetApi(Build.VERSION_CODES.M)
     fun allowLowPan(state: Boolean = true): Orb {
-        this.orbEngine.setOption(OrbType.LOW_PAN, state)
+        this.orbEngine.setOption(OrbType.LOWPAN, state)
         return this
     }
 
@@ -232,7 +228,7 @@ class Orb private constructor() {
             mapOf(
                 OrbType.CELLULAR to false,
                 OrbType.ETHERNET to false,
-                OrbType.LOW_PAN to false,
+                OrbType.LOWPAN to false,
                 OrbType.VPN to false,
                 OrbType.WIFI to false,
                 OrbType.WIFI_AWARE to false
@@ -250,7 +246,7 @@ class Orb private constructor() {
             mapOf(
                 OrbType.BLUETOOTH to false,
                 OrbType.ETHERNET to false,
-                OrbType.LOW_PAN to false,
+                OrbType.LOWPAN to false,
                 OrbType.VPN to false,
                 OrbType.WIFI to false,
                 OrbType.WIFI_AWARE to false
@@ -268,7 +264,7 @@ class Orb private constructor() {
             mapOf(
                 OrbType.BLUETOOTH to false,
                 OrbType.CELLULAR to false,
-                OrbType.LOW_PAN to false,
+                OrbType.LOWPAN to false,
                 OrbType.VPN to false,
                 OrbType.WIFI to false,
                 OrbType.WIFI_AWARE to false
@@ -310,7 +306,7 @@ class Orb private constructor() {
                 OrbType.CELLULAR to false,
                 OrbType.ETHERNET to false,
                 OrbType.VPN to false,
-                OrbType.LOW_PAN to false,
+                OrbType.LOWPAN to false,
                 OrbType.WIFI_AWARE to false
             )
         }
@@ -332,7 +328,7 @@ class Orb private constructor() {
                 OrbType.CELLULAR to false,
                 OrbType.ETHERNET to false,
                 OrbType.VPN to false,
-                OrbType.LOW_PAN to false,
+                OrbType.LOWPAN to false,
                 OrbType.WIFI to false
             )
         }
