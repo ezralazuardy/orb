@@ -113,8 +113,8 @@ Please read more about the **OrbResponse** in the [wiki](#%EF%B8%8F-wiki).
 
 <br/>
 
-## 📖️ Wiki
-Read the Orb Wiki [here](https://github.com/ezralazuardy/orb/wiki).
+## 📖️ Documentation
+Read the Orb documentation [here](https://github.com/ezralazuardy/orb/wiki).
 
 <br/>
 
@@ -131,9 +131,9 @@ Before start making contributions to Orb, please read the [contribution guidelin
 <br/>
 
 ## 🛡️ Security Policy
-Read the current Orb project's security policy [here](https://github.com/ezralazuardy/orb/security/policy).
+Read the current Orb's security policy [here](https://github.com/ezralazuardy/orb/security/policy).
 
 <br/>
 
 ## 🗒️ Side Note
-Orb is at it's early stage. If you experiencing an error or bug, please report it to [issues](https://github.com/ezralazuardy/orb/issues) page.
+Orb is at it's early stage. If you experiencing an error or bug, please report it by creating a new [issues](https://github.com/ezralazuardy/orb/issues).
