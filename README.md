@@ -1,4 +1,4 @@
-<p align="center"><a href="https://orb.ezralazuardy.com" target="_blank" rel="noopener noreferrer"><img width="200" src="https://github.com/ezralazuardy/orb/blob/master/images/orb-logo.png" alt="Orb"></a></p>
+<p align="center"><a href="https://orb.ezralazuardy.com" target="_blank" rel="noopener noreferrer"><img width="200" src="https://orb.ezralazuardy.com/img/orb.png" alt="Orb"></a></p>
 
 <p align="center">
   <a href="https://codacy.com/manual/ezralazuardy/orb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ezralazuardy/orb&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/3904f9eccb6b4606a25a428e1abd9b1d" alt="code quality" target="_blank" rel="noopener noreferrer"></a>
