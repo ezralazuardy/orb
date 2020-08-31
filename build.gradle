@@ -1,3 +1,9 @@
+/*
+ * Created by Ezra Lazuardy on 8/31/20 4:51 PM
+ * Copyright (c) 2020. All rights reserved.
+ * Last modified 8/31/20 4:45 PM
+ */
+
 buildscript {
     ext.kotlin_version = '1.3.72'
     repositories {
@@ -6,7 +12,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.android.tools.build:gradle:4.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }

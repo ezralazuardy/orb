@@ -1,2 +1,8 @@
-include ':app'
+/*
+ * Created by Ezra Lazuardy on 8/31/20 4:51 PM
+ * Copyright (c) 2020. All rights reserved.
+ * Last modified 8/31/20 4:43 PM
+ */
+
+include ':sample'
 include ':orb'

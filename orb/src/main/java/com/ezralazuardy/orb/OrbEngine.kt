@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 5/6/20 8:23 AM
+ * Created by Ezra Lazuardy on 8/31/20 4:51 PM
  * Copyright (c) 2020. All rights reserved.
- * Last modified 5/6/20 8:05 AM
+ * Last modified 8/31/20 4:49 PM
  */
 
 package com.ezralazuardy.orb
@@ -88,11 +88,13 @@ class OrbEngine(
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private fun getConnectivityManagerCallback(): ConnectivityManager.NetworkCallback {
         connectivityManagerCallback = object : ConnectivityManager.NetworkCallback() {
-            override fun onAvailable(network: Network?) {
+            override fun onAvailable(network: Network) {
+                super.onAvailable(network)
                 setCurrentState(OrbState.CONNECTED)
             }
 
-            override fun onLost(network: Network?) {
+            override fun onLost(network: Network) {
+                super.onLost(network)
                 setCurrentState(OrbState.DISCONNECTED)
             }
         }

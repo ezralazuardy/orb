@@ -65,9 +65,12 @@ dependencies {
 #### Manifest permission settings
 Since Orb API need to access and change the current network status of the device, you need to add the following permissions in you App manifest.
 ```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+<manifest>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    ...
+</manifest>
 ```
 
 #### Using Orb
@@ -117,7 +120,7 @@ Read the Orb documentation [here](https://orb.ezralazuardy.com).
 <br/>
 
 ## 🤔️ Sample Implementation
-You can try the sample implementation of Orb by cloning this repository to your local, and run the [app](https://github.com/ezralazuardy/orb/tree/master/app) module.
+You can try the sample implementation of Orb by cloning this repository to your local, and run the [sample](https://github.com/ezralazuardy/orb/tree/master/sample) module.
 
 <br/>
 
