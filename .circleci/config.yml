@@ -12,5 +12,8 @@ jobs:
           name: Setting Gradle Permission
           command: chmod +x gradlew
       - run:
+          name: Cleaning Build Cache
+          command: ./gradlew clean
+      - run:
           name: Building
           command: ./gradlew build
