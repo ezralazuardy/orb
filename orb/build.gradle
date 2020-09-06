@@ -1,17 +1,15 @@
 /*
- * Created by Ezra Lazuardy on 9/6/20 12:17 PM
+ * Created by Ezra Lazuardy on 9/6/20 12:23 PM
  * Copyright (c) 2020. All rights reserved.
- * Last modified 9/6/20 12:16 PM
+ * Last modified 9/6/20 12:22 PM
  */
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'maven-publish'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.ezralazuardy'
-version = '0.2'
 
 android {
     compileSdkVersion 30
