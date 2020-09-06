@@ -1,13 +1,12 @@
 /*
- * Created by Ezra Lazuardy on 9/6/20 12:50 PM
+ * Created by Ezra Lazuardy on 9/6/20 1:34 PM
  * Copyright (c) 2020. All rights reserved.
- * Last modified 9/6/20 12:48 PM
+ * Last modified 9/6/20 1:32 PM
  */
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'maven-publish'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.ezralazuardy'
@@ -33,14 +32,8 @@ android {
         }
     }
 
-    lintOptions {
-        abortOnError false
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/java'
-        androidTest.java.srcDirs += 'src/androidTest/java'
-        androidTest.resources.srcDirs += 'src/androidTest/res'
+    testOptions {
+        unitTests.returnDefaultValues = true
     }
 }
 
@@ -69,12 +62,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
-task classesJar(type: Jar) {
-    from "$buildDir/intermediates/classes/release"
-}
-
 artifacts {
-    archives classesJar
     archives javadocJar
     archives sourcesJar
 }
