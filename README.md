@@ -77,8 +77,8 @@ Since Orb API need to access and change the current network status of the device
 Orb usage is pretty simple, you just need to initialize it in your current context (view), and the rest will be handled by Orb.
 
 ```kotlin
-Orb.with(this).observe {
-    Log.d(this::javaClass.simpleName, it.toString()) // 'it' is an OrbResponse object
+Orb.with(this).observe { response ->
+    Log.d(this::javaClass.simpleName, response.toString())
     // do something awesome..
 }
 ```
@@ -91,8 +91,8 @@ If you don't want to use a direct written observer, you can use the Orb observer
 
 ```kotlin
 // use the Orb observer function builder
-val observer = orbObserver {
-  Log.d(this::javaClass.simpleName, it.toString()) // 'it' is an OrbResponse object
+val observer = orbObserver { response ->
+  Log.d(this::javaClass.simpleName, response.toString())
   // do something awesome..
 }
 

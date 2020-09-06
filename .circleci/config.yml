@@ -9,5 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Setting Gradle Permission
+          command: chmod +x gradlew
+      - run:
           name: Building
           command: ./gradlew build
