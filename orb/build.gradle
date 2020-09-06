@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 9/6/20 12:23 PM
+ * Created by Ezra Lazuardy on 9/6/20 12:25 PM
  * Copyright (c) 2020. All rights reserved.
- * Last modified 9/6/20 12:22 PM
+ * Last modified 9/6/20 12:25 PM
  */
 
 apply plugin: 'com.android.library'
@@ -33,12 +33,6 @@ android {
 
     lintOptions {
         abortOnError false
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/java'
-        androidTest.java.srcDirs += 'src/androidTest/java'
-        androidTest.resources.srcDirs += 'src/androidTest/res'
     }
 }
 
