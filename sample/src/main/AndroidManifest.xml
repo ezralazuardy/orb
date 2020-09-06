@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by Ezra Lazuardy on 8/31/20 4:51 PM
+  ~ Created by Ezra Lazuardy on 9/6/20 12:17 PM
   ~ Copyright (c) 2020. All rights reserved.
-  ~ Last modified 5/4/20 2:42 AM
+  ~ Last modified 8/31/20 11:17 PM
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -29,5 +29,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

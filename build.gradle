@@ -1,11 +1,11 @@
 /*
- * Created by Ezra Lazuardy on 8/31/20 4:51 PM
+ * Created by Ezra Lazuardy on 9/6/20 12:17 PM
  * Copyright (c) 2020. All rights reserved.
- * Last modified 8/31/20 4:45 PM
+ * Last modified 9/6/20 12:02 PM
  */
 
 buildscript {
-    ext.kotlin_version = '1.3.72'
+    ext.kotlin_version = '1.4.0'
     repositories {
         google()
         jcenter()
@@ -22,6 +22,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
     }
 }
