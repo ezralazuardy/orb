@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 9/6/20 1:41 PM
+ * Created by Ezra Lazuardy on 9/6/20 2:06 PM
  * Copyright (c) 2020. All rights reserved.
- * Last modified 9/6/20 1:40 PM
+ * Last modified 9/6/20 2:05 PM
  */
 
 apply plugin: 'com.android.library'
@@ -10,6 +10,13 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.ezralazuardy'
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
 
 android {
     compileSdkVersion 30
