@@ -1,7 +1,7 @@
 /*
- * Created by Ezra Lazuardy on 9/6/20 12:36 PM
+ * Created by Ezra Lazuardy on 9/6/20 12:44 PM
  * Copyright (c) 2020. All rights reserved.
- * Last modified 9/6/20 12:36 PM
+ * Last modified 9/6/20 12:43 PM
  */
 
 apply plugin: 'com.android.library'
@@ -32,16 +32,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    lintOptions {
-        abortOnError false
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/java'
-        androidTest.java.srcDirs += 'src/androidTest/java'
-        androidTest.resources.srcDirs += 'src/androidTest/res'
-    }
 }
 
 dependencies {
@@ -55,11 +45,13 @@ dependencies {
 }
 
 task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
-    from android.sourceSets.main.java.sourceFiles
 }
 
 task javadoc(type: Javadoc) {
+    options.charSet = 'UTF-8'
+    failOnError  false
     source = android.sourceSets.main.java.sourceFiles
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
@@ -69,12 +61,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
-task classesJar(type: Jar) {
-    from "$buildDir/intermediates/classes/release"
-}
-
 artifacts {
-    archives classesJar
-    archives javadocJar
     archives sourcesJar
+    archives javadocJar
 }
