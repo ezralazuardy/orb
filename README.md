@@ -142,3 +142,8 @@ Read the current Orb's security policy [here](https://github.com/ezralazuardy/or
 
 ## 🗒️ Side Note
 Orb is at it's early stage. If you experiencing an error or bug, please report it by creating a new [issues](https://github.com/ezralazuardy/orb/issues).
+
+<br/>
+
+## 📜 License
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fezralazuardy%2Forb?ref=badge_large" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fezralazuardy%2Forb.svg?type=large"/></a>
