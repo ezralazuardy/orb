@@ -3,6 +3,7 @@
 <p align="center">
   <a href="https://codacy.com/manual/ezralazuardy/orb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ezralazuardy/orb&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/3904f9eccb6b4606a25a428e1abd9b1d" alt="code quality" target="_blank" rel="noopener noreferrer"></a>
   <a href="https://codeclimate.com/github/ezralazuardy/orb"><img src="https://img.shields.io/codeclimate/maintainability/ezralazuardy/orb" alt="maintainability" target="_blank" rel="noopener noreferrer"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fezralazuardy%2Forb?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fezralazuardy%2Forb.svg?type=shield"/></a>
   <a href="https://circleci.com/gh/ezralazuardy/orb"><img src="https://img.shields.io/circleci/build/github/ezralazuardy/orb" alt="build status" target="_blank" rel="noopener noreferrer"></a>
   <a href="https://jitpack.io/#ezralazuardy/orb"><img src="https://img.shields.io/github/v/release/ezralazuardy/orb" alt="release" target="_blank" rel="noopener noreferrer"></a>
   <a href="https://android-arsenal.com/api?level=15#l15"><img src="https://img.shields.io/badge/API-16%2B-blue.svg" alt="minimum API" target="_blank" rel="noopener noreferrer"></a>
@@ -13,6 +14,9 @@
 ---
 
 Orb is a lifecycle-aware asynchronous network monitoring library to simplify the needs of network state monitoring in Android. This library can help you monitor (observe) the current network state of Android device. It can give you the current connection status, and connection type in realtime change events without blocking the main thread. Orb really works well with the [MVVM architecture pattern](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) in Android.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fezralazuardy%2Forb.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fezralazuardy%2Forb?ref=badge_large)
 
 #### How it works
 Orb is an implementation of [Android Live Data](https://developer.android.com/topic/libraries/architecture/livedata) that use an observable pattern to get the network state data in realtime. This is what makes Orb lifecycle-aware. Since the lifecycle of Live Data object is already handled automatically by Android lifecycle, you don't need to handle the Orb lifecycle manually. It's guarantee you to be flexible and no memory leak. You can just start Orb and forget about it, it'll handle the lifecycle based on your Activity lifecycle automatically.
