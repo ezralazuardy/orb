@@ -10,4 +10,4 @@ Project versions that are currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-If you found a vulnerability in Orb, please make a new [issue](https://github.com/ezralazuardy/orb/issues) with [label](https://github.com/ezralazuardy/orb/labels) **vulnerability**.
+If you found any kind of vulnerability in Orb, please make a new [issue](https://github.com/ezralazuardy/orb/issues) with [label](https://github.com/ezralazuardy/orb/labels) **vulnerability**.
