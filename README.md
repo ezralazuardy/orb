@@ -4,6 +4,7 @@
   <a href="https://codacy.com/manual/ezralazuardy/orb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ezralazuardy/orb&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/3904f9eccb6b4606a25a428e1abd9b1d" alt="code quality" target="_blank" rel="noopener noreferrer"></a>
   <a href="https://codeclimate.com/github/ezralazuardy/orb"><img src="https://img.shields.io/codeclimate/maintainability/ezralazuardy/orb" alt="maintainability" target="_blank" rel="noopener noreferrer"></a>
   <a href="https://circleci.com/gh/ezralazuardy/orb"><img src="https://img.shields.io/circleci/build/github/ezralazuardy/orb" alt="build status" target="_blank" rel="noopener noreferrer"></a>
+  <a href="https://sonarcloud.io/dashboard?id=ezralazuardy_orb"><img src="https://sonarcloud.io/api/project_badges/measure?project=ezralazuardy_orb&metric=security_rating" alt="security" target="_blank" rel="noopener noreferrer"></a>
   <a href="https://jitpack.io/#ezralazuardy/orb"><img src="https://img.shields.io/github/v/release/ezralazuardy/orb" alt="release" target="_blank" rel="noopener noreferrer"></a>
   <a href="https://android-arsenal.com/api?level=15#l15"><img src="https://img.shields.io/badge/API-16%2B-blue.svg" alt="minimum API" target="_blank" rel="noopener noreferrer"></a>
   <a href="https://github.com/ezralazuardy/orb/issues"><img src="https://img.shields.io/github/issues/ezralazuardy/orb?color=red" alt="issues" target="_blank" rel="noopener noreferrer"></a>
